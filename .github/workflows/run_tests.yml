@@ -19,7 +19,7 @@ jobs:
       - name: Install CUDA
         uses: Jimver/cuda-toolkit@v0.2.9
         with:
-          cuda: '11.8.0'
+          cuda: '11.7.0'
 
       - name: Build dockerfile
         run: |
