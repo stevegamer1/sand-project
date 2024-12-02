@@ -16,4 +16,4 @@ COPY . /app
 RUN cmake -S . -B build
 RUN cmake --build build
 #RUN nvidia-smi
-#RUN build/SandTest
+RUN build/SandTest
