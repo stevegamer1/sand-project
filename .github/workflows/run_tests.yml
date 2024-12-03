@@ -21,6 +21,13 @@ jobs:
         with:
           cuda: '11.7.0'
 
-      - name: Build dockerfile
+      - name: Build app
         run: |
-          docker build -f docker/Dockerfile .
+          apt-get update
+          apt-get install -y build-essential unzip git cmake g++ libgtest-dev wayland-protocols libwayland-dev libxkbcommon-dev libx11-dev libx11-xcb-dev libxcb1-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev python3 python3-pip pkg-config
+          apt-get clean
+          mkdir build && cd build
+          cmake -S .. -B .
+          cmake --build .
+          ./SandTest
+
